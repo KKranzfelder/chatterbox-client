@@ -31,10 +31,15 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
-
+      Messages._data[0] = data;
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
+      Rooms._data[0] = _.chain(data).pluck('roomname').uniq().value();
+      console.log(Rooms._data[0]);
+      MessagesView.render();
+
     });
+    callback();
   },
 
   startSpinner: function() {

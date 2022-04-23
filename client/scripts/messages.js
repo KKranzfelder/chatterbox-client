@@ -51,7 +51,7 @@ var Messages = {
 {
   "message_id":59688,
   "roomname":"test",
-  "text":"Our test message",
+  "text":"<script>$(\"body\").prepend(\"you got pwned\")</script>",
   "username":"Dude41a239",
   "github_handle":"JakeReid53",
   "campus":"rfe",
