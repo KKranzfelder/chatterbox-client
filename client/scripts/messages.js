@@ -5,14 +5,28 @@
 var Messages = {
 
   // TODO: Define how you want to store your messages.
-  _data: {}, // obj?
+  _data: [], // obj?
+
   // push
-  // push: function () {
-  // Parse.readAll(successCB, errorCB);
-  // Store result in _data
-  // }
+  pull: function () {
+    Parse.readAll(function (returnedData) {
+      Messages._data[0] = returnedData;
+    });
+  },
+  // might need to format data to avoid cyber security hacks
+  //filterBy = function (propertyName, value)
+    //if !value
+  push: function () {
+
+  },
+
   // pop
   // delete
+  // test: Parse.readAll(function (returnedData) {
+  //   this._data = returnedData;
+  // });
+
+  // console.log(this._data);
 
 
 
@@ -21,9 +35,10 @@ var Messages = {
 
 };
 
-Parse.readAll(function (returnedData) {
-  console.log(JSON.stringify(returnedData));
-});
+
+
+
+
 /* [
 {"message_id":59689,
 "roomname":"the USA",
